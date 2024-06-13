@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Default Parameters
+    [Header("Default Parameters")]
     
     private Player p;
     private Animator Anim = null;
     public float speed = 5.0f;
     public float airSpeed = 1.0f;
+    public float maxFallSpeed;
     private float fireRate = 0.25f; // slowdown
     private float canFire = 0.03f; //elapsed time
     private float canJump = -4f;
     public Rigidbody2D rb;
-    public float jumpAmount = 5.0f;
-    public float fallAmount = -5.0f;
+    public float jumpAmount = 9.0f;
+    public float fallMultiplier = 4.5f;
     private BoxCollider2D boxCollider2d;
     public float frictionAmount = 3.0f;
     public Vector2 boxSize;
@@ -25,11 +26,11 @@ public class Player : MonoBehaviour
     //ShurikenFire Direction
     //public Transform shurikenPoint;
 
-    //Player Direction
-    private bool faceRight = true;
+    [Header("Player Direction")]
+    public bool faceRight = true;
 
 
-    //GroundCheck
+    [Header("GroundCheck")]
     [SerializeField] private LayerMask groundMask;
 
     //Lives
@@ -52,12 +53,21 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip AttackClip = null;
     [SerializeField] private AudioClip DeathClip = null;
 
+    [Header("VCamReferences")]
+    [SerializeField] private GameObject CameraFollowGO;
+    private CameraFollowObjects CameraFollowObject;
+    private float fallSpeedYDampChangeThresh;
+
+
     // Start is called before the first frame update
     void Start()
     {
         
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
 
+        CameraFollowObject = CameraFollowGO.gameObject.GetComponent<CameraFollowObjects>();
+
+        fallSpeedYDampChangeThresh = CameraManager.instance.fallSpeedYDampChangeThresh;
         //transform.position = new Vector3(-6,-4,0);
         /*Anim = GetComponent<Animator>();
         
@@ -81,26 +91,59 @@ public class Player : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        Move();
+        //Move();
 
         //Bounds();
 
         //Shoot();
 
-        isGrounded();
+        //Checks if can jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        {
+            //rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            Jump();
+        }
+        if (!Input.GetKey(KeyCode.Space) && !isGrounded())
+        {
+            //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
+            JumpFall();
+        }
 
-        SpeedController();
+        //if we are falling past the speed threshold
+        if (rb.velocity.y < fallSpeedYDampChangeThresh && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.lerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpYDamping(true);
+        }
+
+        //if we're standing still or moving up
+        if (rb.velocity.y == 0f && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.lerpedFromPlayerFalling)
+        {
+            CameraManager.instance.lerpedFromPlayerFalling = false;
+
+            CameraManager.instance.LerpYDamping(false);
+        }
+
 
     }
 
-    /*void FixedUpdate()
+    void LateUpdate()
     {
-        //Move();
+        
+    }
 
-        //isGrounded();
+    void FixedUpdate()
+    {
+        //clamp players Y fall speed 
+        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -maxFallSpeed, maxFallSpeed * 5));
+
+        Move();
+
+        SpeedController();
+
+        isGrounded();
 
         
-    }*/
+    }
 
     void Move()
     {
@@ -109,24 +152,32 @@ public class Player : MonoBehaviour
         if (horizontalInput > 0 && !faceRight)
         {
             Direction();
+
+            //turn the camera follow object
+            CameraFollowObject.CallTurn();
             //rb.AddForce(Vector2.right * speed, ForceMode2D.Force);
         }
         else if (horizontalInput < 0 && faceRight)
         {
             Direction();
+
+            //turn the camera follow object
+            CameraFollowObject.CallTurn();
             //rb.AddForce(Vector2.left * speed, ForceMode2D.Force);
         }
         
         //changes movement direction based on direction faced
         if (isGrounded())
         {
-            rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode2D.Force);
+            //rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode2D.Force);
+            rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
             //boxCollider2d.sharedMaterial.friction = frictionAmount;
         }
             
             //transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
         else if (!isGrounded())
         {
+            //rb.velocity = new Vector2(horizontalInput * airSpeed, rb.velocity.y);
             rb.AddForce(Vector3.right * airSpeed * horizontalInput, ForceMode2D.Force);
             //boxCollider2d.sharedMaterial.friction = 0.0f;
         }    
@@ -134,16 +185,18 @@ public class Player : MonoBehaviour
             //rb.AddForce(Vector3.left * speed * horizontalInput, ForceMode2D.Force);
             //transform.Translate(Vector3.left * speed * horizontalInput * Time.deltaTime);
         
-        //Checks if can jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
-        {
-            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-        }
-        if (!Input.GetKey(KeyCode.Space) && !isGrounded())
-        {
-            rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
-        }
+        
             
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+    }
+
+    private void JumpFall()
+    {
+        rb.AddForce(Vector2.up *  -jumpAmount/fallMultiplier, ForceMode2D.Force);
     }
 
     private void SpeedController()
@@ -165,13 +218,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(limitedSpeed.x, rb.velocity.y);
         }
         
-
-        /*if (maxYSpeed != 0 && rb.velocity.y > maxYSpeed && state == MovementState.air)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, -maxYSpeed, rb.velocity.z);
-            //if (isGrounded)
-                //rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        }*/
 
         // reset y velocity
         //if (rb.velocity.y < 0f && isGrounded)
