@@ -98,7 +98,7 @@ public class CameraManager : MonoBehaviour
         }
 
         //if the current camera is the camera that is up and our trigger exit direction was down
-        else if (currentCam == cameraFromUp && triggerExitDirection.y < 0f)
+        else if (currentCam == cameraFromUp && triggerExitDirection.y > 0f)
         {
             //active new cam
             cameraFromDown.enabled = true;
@@ -115,7 +115,7 @@ public class CameraManager : MonoBehaviour
         }
 
         //if the current camera is the camera that is down and our trigger exit direction was up
-        else if (currentCam == cameraFromDown && triggerExitDirection.y > 0f)
+        else if (currentCam == cameraFromDown && triggerExitDirection.y < 0f)
         {
             //active new cam
             cameraFromUp.enabled = true;

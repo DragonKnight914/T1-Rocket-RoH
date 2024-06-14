@@ -31,9 +31,9 @@ public class CameraControlTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Vector2 exitDirection = (collision.transform.position - coll.bounds.center).normalized;
-            if (customInspectorObjects.swapCameras && customInspectorObjects.cameraOnLeft != null && customInspectorObjects.cameraOnRight != null
-             && customInspectorObjects.cameraOnUp != null && customInspectorObjects.cameraOnDown != null)
+            Vector2 exitDirection = (collision.transform.position - coll.bounds.center);
+            if (customInspectorObjects.swapCameras && (customInspectorObjects.cameraOnLeft || customInspectorObjects.cameraOnRight
+             || customInspectorObjects.cameraOnUp || customInspectorObjects.cameraOnDown))
             {
                 //swap cameras
                 CameraManager.instance.SwapCameras(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, customInspectorObjects.cameraOnUp, customInspectorObjects.cameraOnDown, exitDirection);
@@ -97,6 +97,14 @@ public class MyScriptEditor : Editor
 
             cameraControlTrigger.customInspectorObjects.cameraOnRight = EditorGUILayout.ObjectField(
                 "Camera on Right", cameraControlTrigger.customInspectorObjects.cameraOnRight,
+                typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
+
+            cameraControlTrigger.customInspectorObjects.cameraOnUp = EditorGUILayout.ObjectField(
+                "Camera on Top", cameraControlTrigger.customInspectorObjects.cameraOnUp,
+                typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
+
+            cameraControlTrigger.customInspectorObjects.cameraOnDown = EditorGUILayout.ObjectField(
+                "Camera on Bottom", cameraControlTrigger.customInspectorObjects.cameraOnDown,
                 typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
             
 
