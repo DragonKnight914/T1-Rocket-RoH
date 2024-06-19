@@ -22,6 +22,24 @@ public class Player : MonoBehaviour
     public Vector2 boxSize;
     public float castDistance;
     private float horizontalInput;
+    [Header("Inputs")]
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode dashKey = KeyCode.RightShift;
+
+
+    [Header("Power Ups")]
+    public bool canDoubleJump;
+    public int jumpCount;
+    public int maxJumps;
+    public bool lyreAbility;
+    public float dashVelocity = 14f;
+    public float dashTime = 0.5f;
+    public float dashCooldown = 0.5f;
+    private Vector2 dashDirection;
+    private bool isDashing = false;
+    private bool canDash = true;
+    private int dashCount = 1;
+    public bool aulosAbility;
 
     //ShurikenFire Direction
     //public Transform shurikenPoint;
@@ -96,17 +114,55 @@ public class Player : MonoBehaviour
         //Bounds();
 
         //Shoot();
+        if (isGrounded() && rb.velocity.y <= 0f)
+        {
+            jumpCount = 0;
+            canDoubleJump = false;
+            
+        }
+
+        if (!isGrounded() && canDoubleJump == false)
+        {
+            jumpCount++;
+            canDoubleJump = true;
+            
+        }
+
 
         //Checks if can jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(jumpKey))
         {
-            //rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-            Jump();
+            if (isGrounded() && jumpCount == 0)
+            {
+                canDoubleJump = true;
+                Jump();
+                jumpCount++;
+
+            }
+
+            else if (!isGrounded() && jumpCount < maxJumps)
+            {
+                Jump();
+                jumpCount++;
+            }
         }
-        if (!Input.GetKey(KeyCode.Space) && !isGrounded())
+        if (!Input.GetKey(jumpKey) && !isGrounded())
         {
             //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
             JumpFall();
+        }
+
+        if (Input.GetKeyDown(dashKey) && canDash && dashCount >= 1)
+        {
+            //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
+            isDashing = true;
+            canDash = false;
+            dashCount--;
+            if (faceRight)
+                dashDirection = Vector3.right;
+            else
+                dashDirection = Vector3.left;
+            StartCoroutine(Dashing());
         }
 
         //if we are falling past the speed threshold
@@ -142,6 +198,12 @@ public class Player : MonoBehaviour
 
         isGrounded();
 
+
+        if (isDashing)
+        {
+            rb.velocity = dashDirection.normalized * dashVelocity;
+            return;
+        }
         
     }
 
@@ -167,20 +229,21 @@ public class Player : MonoBehaviour
         }
         
         //changes movement direction based on direction faced
-        if (isGrounded())
-        {
+        //if (isGrounded())
+        //{
             //rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode2D.Force);
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+            canDash = true;
             //boxCollider2d.sharedMaterial.friction = frictionAmount;
-        }
+        //}
             
             //transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        else if (!isGrounded())
+        /*else if (!isGrounded())
         {
             //rb.velocity = new Vector2(horizontalInput * airSpeed, rb.velocity.y);
             rb.AddForce(Vector3.right * airSpeed * horizontalInput, ForceMode2D.Force);
             //boxCollider2d.sharedMaterial.friction = 0.0f;
-        }    
+        }  */  
             
             //rb.AddForce(Vector3.left * speed * horizontalInput, ForceMode2D.Force);
             //transform.Translate(Vector3.left * speed * horizontalInput * Time.deltaTime);
@@ -191,12 +254,38 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        //if (isGrounded())
+        //{
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        //}
+        /*else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            jumpCount++;
+        }*/
     }
 
     private void JumpFall()
     {
         rb.AddForce(Vector2.up *  -jumpAmount/fallMultiplier, ForceMode2D.Force);
+    }
+
+    private IEnumerator Dashing()
+    {
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
+
+        StartCoroutine(StopDashing());
+        
+    }
+
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        dashCount++;
+        
     }
 
     private void SpeedController()
@@ -226,15 +315,15 @@ public class Player : MonoBehaviour
 
     public bool isGrounded()
     {
-        
-        
           
         if (Physics2D.BoxCast(transform.position, boxCollider2d.bounds.size, 0f, Vector2.down, castDistance, groundMask))
         {
+            Debug.Log("Grounded");
             return true;
         }
         else
         {
+            Debug.Log("Not Grounded");
             return false;
         }
     }
@@ -245,54 +334,7 @@ public class Player : MonoBehaviour
     }
 
 
-    /*void Bounds()
-    {
-        //upper bound
-        if (transform.position.y > 10)
-        {
-            transform.position = new Vector3(transform.position.x, 0, 0);
-        }
-
-        //left bound
-        if (transform.position.x < -8f)
-        {
-            transform.position = new Vector3(-8f, transform.position.y, 0);
-        }
-        //right bound
-        else if (transform.position.x > 8f)
-        {
-            transform.position = new Vector3(8f, transform.position.y, 0);
-        }
-
-    }*/
-
-    /*private void Shoot()
-    {
-        //Press F OR mouse 0 to fire
-        if(Input.GetKeyDown("f") || Input.GetMouseButtonDown(0))
-        {
-            if (Time.time > canFire)
-            {
-                AudioSource.PlayClipAtPoint(AttackClip, Camera.main.transform.position);
-
-                if (canTripleShot == false)
-                {
-                    // clone laser at player's position rotated as normal
-                    Instantiate(ShurikenPrefab, shurikenPoint.position, shurikenPoint.rotation);
-                    
-                    canFire = Time.time + fireRate;
-                }
-                else
-                {
-                    // clone laser at player's position rotated as normal
-                    Instantiate(TripleShotPrefab, shurikenPoint.position, shurikenPoint.rotation);
-
-                    canFire = Time.time + fireRate;
-                }
-            }
-        }
-        
-    }*/
+    
 
     private void Direction()
     {

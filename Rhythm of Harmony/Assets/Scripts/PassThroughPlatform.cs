@@ -25,7 +25,7 @@ public class PassThroughPlatform : MonoBehaviour
 
     private IEnumerator EnableCollider()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         coll.enabled = true;
     }
 
