@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
     //Sounds
     [SerializeField] private AudioClip AttackClip = null;
     [SerializeField] private AudioClip DeathClip = null;
+    [SerializeField] private AudioClip DashClip = null;
+    [SerializeField] private AudioClip JumpClip = null;
+    [SerializeField] private AudioSource PlayerSounds;
 
     [Header("VCamReferences")]
     [SerializeField] private GameObject CameraFollowGO;
@@ -103,6 +106,7 @@ public class Player : MonoBehaviour
         }
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();*/
+        PlayerSounds = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -265,6 +269,7 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
             jumpCount++;
         }*/
+        //PlayerSounds.PlayOneShot(JumpClip, 1.0f);
     }
 
     private void JumpFall()
@@ -276,7 +281,7 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
-
+        //PlayerSounds.PlayOneShot(DashClip, 1.0f);
         StartCoroutine(StopDashing());
         
     }
