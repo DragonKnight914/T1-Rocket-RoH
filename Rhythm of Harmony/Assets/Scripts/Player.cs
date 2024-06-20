@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
         }
 
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();*/
-        PlayerSounds = GetComponent<AudioSource>();
+        //PlayerSounds = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -276,7 +276,7 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
             jumpCount++;
         }*/
-        //PlayerSounds.PlayOneShot(JumpClip, 1.0f);
+        PlayerSounds.PlayOneShot(JumpClip, 0.25f);
     }
 
     private void JumpFall()
@@ -286,9 +286,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator Dashing()
     {
+        PlayerSounds.PlayOneShot(DashClip, 0.5f);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
-        //PlayerSounds.PlayOneShot(DashClip, 1.0f);
+        
         StartCoroutine(StopDashing());
         
     }
