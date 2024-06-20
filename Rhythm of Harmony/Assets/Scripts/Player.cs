@@ -118,6 +118,13 @@ public class Player : MonoBehaviour
         //Bounds();
 
         //Shoot();
+
+        //Resets Dash
+        if (isGrounded())
+            canDash = true;    
+
+
+        //Resets Jump 
         if (isGrounded() && rb.velocity.y <= 0f)
         {
             jumpCount = 0;
@@ -156,7 +163,7 @@ public class Player : MonoBehaviour
             JumpFall();
         }
 
-        if (Input.GetKeyDown(dashKey) && canDash && dashCount >= 1)
+        if (Input.GetKeyDown(dashKey) && canDash && lyreAbility && dashCount >= 1)
         {
             //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
             isDashing = true;
@@ -237,7 +244,7 @@ public class Player : MonoBehaviour
         //{
             //rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode2D.Force);
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-            canDash = true;
+
             //boxCollider2d.sharedMaterial.friction = frictionAmount;
         //}
             
@@ -321,7 +328,7 @@ public class Player : MonoBehaviour
     public bool isGrounded()
     {
           
-        if (Physics2D.BoxCast(transform.position, boxCollider2d.bounds.size, 0f, Vector2.down, castDistance, groundMask))
+        if (Physics2D.BoxCast(transform.position, boxSize, 0f, Vector2.down, castDistance, groundMask))
         {
             Debug.Log("Grounded");
             return true;

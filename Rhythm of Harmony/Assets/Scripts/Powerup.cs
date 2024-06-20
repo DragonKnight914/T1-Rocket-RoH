@@ -11,8 +11,8 @@ public class Powerup : MonoBehaviour
         //0 = Jump
         //1 = Dash
         //2 = Interact
-    [SerializeField] private AudioClip PowerUpSoundClip = null;
-    [SerializeField] private AudioMixer Music = null;
+    //[SerializeField] private AudioClip PowerUpSoundClip = null;
+    [SerializeField] private AudioMixer music = null;
 
     // Start is called before the first frame update
     void Start()
@@ -41,17 +41,20 @@ public class Powerup : MonoBehaviour
                 if (powerupID == 0) //if script is found
                 {
                     P.maxJumps = 2; //enables ability
-                    AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("defi", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
                 } 
                 else if (powerupID == 1)
                 {
                     P.lyreAbility = true;
-                    AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("lyre", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
                 }
                 else if (powerupID == 2)
                 {
                     P.aulosAbility = true;
-                    AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("aulos", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
                 }
             }
 
