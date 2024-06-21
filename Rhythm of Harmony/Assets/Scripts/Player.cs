@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     [Header("Inputs")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode dashKey = KeyCode.RightShift;
+    public KeyCode interactKey = KeyCode.F;
 
 
     [Header("Power Ups")]
@@ -68,7 +69,9 @@ public class Player : MonoBehaviour
     //private GameManager GM = null;
 
     //Sounds
-    [SerializeField] private AudioClip AttackClip = null;
+    [SerializeField] private AudioClip DefiClip = null;
+    [SerializeField] private AudioClip AulosClip = null;
+    [SerializeField] private AudioClip LyreClip = null;
     [SerializeField] private AudioClip DeathClip = null;
     [SerializeField] private AudioClip DashClip = null;
     [SerializeField] private AudioClip JumpClip = null;
@@ -258,9 +261,7 @@ public class Player : MonoBehaviour
             
             //rb.AddForce(Vector3.left * speed * horizontalInput, ForceMode2D.Force);
             //transform.Translate(Vector3.left * speed * horizontalInput * Time.deltaTime);
-        
-        
-            
+                
     }
 
     private void Jump()
@@ -277,6 +278,8 @@ public class Player : MonoBehaviour
             jumpCount++;
         }*/
         PlayerSounds.PlayOneShot(JumpClip, 0.25f);
+        if (jumpCount == 1)
+            PlayerSounds.PlayOneShot(DefiClip, 0.1f);
     }
 
     private void JumpFall()
@@ -286,7 +289,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator Dashing()
     {
-        PlayerSounds.PlayOneShot(DashClip, 0.5f);
+        PlayerSounds.PlayOneShot(DashClip, 0.3f);
+        PlayerSounds.PlayOneShot(LyreClip, 0.15f);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         

@@ -12,8 +12,9 @@ public class Powerup : MonoBehaviour
         //1 = Dash
         //2 = Interact
     [SerializeField] private AudioClip PowerUpSoundClip = null;
-    [SerializeField] private AudioSource PowerupSounds;
+    [SerializeField] private AudioClip MusicClip = null;
     [SerializeField] private AudioMixer music = null;
+    [SerializeField] private AudioSource SoundEffects;
 
     // Start is called before the first frame update
     void Start()
@@ -31,35 +32,28 @@ public class Powerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //local variable only in this method
-            //Script Communication
-                //Reach out to what we hit
-                //look at component list
-                //find script component player and links to it
+            
             Player P = collision.GetComponent<Player>();
             if (P != null) //if script is found
             {
                 if (powerupID == 0) //if script is found
                 {
-                    PowerupSounds.PlayOneShot(PowerUpSoundClip, 0.5f);
                     P.maxJumps = 2; //enables ability
-                    music.SetFloat("defi", Mathf.Lerp(-80f, 0, Time.deltaTime));
-                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("Defi", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    
                 } 
                 else if (powerupID == 1)
                 {
-                    PowerupSounds.PlayOneShot(PowerUpSoundClip, 0.5f);
                     P.lyreAbility = true;
-                    music.SetFloat("lyre", Mathf.Lerp(-80f, 0, Time.deltaTime));
-                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("Lyre", Mathf.Lerp(-80f, 0, Time.deltaTime));
                 }
                 else if (powerupID == 2)
                 {
-                    PowerupSounds.PlayOneShot(PowerUpSoundClip, 0.5f);
                     P.aulosAbility = true;
-                    music.SetFloat("aulos", Mathf.Lerp(-80f, 0, Time.deltaTime));
-                    //AudioSource.PlayClipAtPoint(PowerUpSoundClip, Camera.main.transform.position);
+                    music.SetFloat("Aulos", Mathf.Lerp(-80f, 0, Time.deltaTime));
                 }
+                SoundEffects.PlayOneShot(PowerUpSoundClip, 0.1f);
+                SoundEffects.PlayOneShot(MusicClip, 0.1f);
             }
 
             Destroy(this.gameObject); //powerup
