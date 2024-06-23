@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
         }*/
         PlayerSounds.PlayOneShot(JumpClip, 0.25f);
         if (jumpCount == 1)
-            PlayerSounds.PlayOneShot(DefiClip, 0.1f);
+            PlayerSounds.PlayOneShot(DefiClip, 0.05f);
     }
 
     private void JumpFall()
