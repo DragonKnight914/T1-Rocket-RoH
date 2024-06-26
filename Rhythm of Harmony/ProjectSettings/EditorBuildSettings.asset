@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mel - Scenes/Mel LevelScene.unity
     guid: 317b78c3aee17574794100942c439023
+  - enabled: 1
+    path: Assets/Scenes/Mel - Scenes/Mel TitleScene.unity
+    guid: 759b1f578759a694c8266961712fa86d
   m_configObjects: {}

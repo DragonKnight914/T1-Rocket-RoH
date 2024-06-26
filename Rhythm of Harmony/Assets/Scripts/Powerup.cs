@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Powerup : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Powerup : MonoBehaviour
     [SerializeField] private AudioClip MusicClip = null;
     [SerializeField] private AudioMixer music = null;
     [SerializeField] private AudioSource SoundEffects;
+    [SerializeField] private GameObject powerupImage;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,7 @@ public class Powerup : MonoBehaviour
                 }
                 SoundEffects.PlayOneShot(PowerUpSoundClip, 0.1f);
                 SoundEffects.PlayOneShot(MusicClip, 0.1f);
+                powerupImage.SetActive(true);
             }
 
             Destroy(this.gameObject); //powerup

@@ -3934,14 +3934,13 @@ GameObject:
   - component: {fileID: 161906700}
   - component: {fileID: 161906702}
   - component: {fileID: 161906701}
-  - component: {fileID: 161906703}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &161906700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3974,7 +3973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3999,27 +3998,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161906699}
   m_CullTransparentMesh: 1
---- !u!95 &161906703
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161906699}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a33e068d37ce8434386a925b82f46390, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &167316346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4028,38 +4006,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1021914293}
     m_Modifications:
-    - target: {fileID: 3352747435112025728, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_Radius
-      value: 1.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900872417547968684, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8c057e99ec2558141bc1ebd47b0de6f2, type: 3}
-    - target: {fileID: 3900872417547968684, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900872417547968684, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900872417547968684, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779975093647363928, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4351207
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779975093647363928, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4351207
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779975093647363928, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4351207
-      objectReference: {fileID: 0}
     - target: {fileID: 5779975093647363928, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.299995
@@ -4112,10 +4058,6 @@ PrefabInstance:
       propertyPath: SoundEffects
       value: 
       objectReference: {fileID: 1937306704}
-    - target: {fileID: 8071548752119954943, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
-      propertyPath: powerupImage
-      value: 
-      objectReference: {fileID: 991149049}
     - target: {fileID: 8071548752119954943, guid: 078e03f74a932ef47a61027ff10cfa09, type: 3}
       propertyPath: PowerUpSoundClip
       value: 
@@ -6009,8 +5951,6 @@ MonoBehaviour:
   lives: 3
   canTripleShot: 0
   canSpeedBoost: 0
-  lyreAnim: {fileID: 1655927615}
-  defiAnim: {fileID: 991149053}
   ShurikenPrefab: {fileID: 0}
   TripleShotPrefab: {fileID: 0}
   DefiClip: {fileID: 8300000, guid: 66ac3037738b9fb43a41bca92cc3aaba, type: 3}
@@ -10357,7 +10297,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1793016579
   m_SortingLayer: 3
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8581adce653562340b3401705e94dfbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17516,14 +17456,13 @@ GameObject:
   - component: {fileID: 991149050}
   - component: {fileID: 991149052}
   - component: {fileID: 991149051}
-  - component: {fileID: 991149053}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &991149050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17556,7 +17495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17581,27 +17520,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991149049}
   m_CullTransparentMesh: 1
---- !u!95 &991149053
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991149049}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a33e068d37ce8434386a925b82f46390, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1005273436
 GameObject:
   m_ObjectHideFlags: 0
@@ -20428,18 +20346,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1021914293}
     m_Modifications:
     - target: {fileID: 507009902190649123, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9514147
-      objectReference: {fileID: 0}
-    - target: {fileID: 507009902190649123, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9514147
-      objectReference: {fileID: 0}
-    - target: {fileID: 507009902190649123, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9514147
-      objectReference: {fileID: 0}
-    - target: {fileID: 507009902190649123, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -20488,36 +20394,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1937306704}
     - target: {fileID: 944764381217515218, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: powerupImage
-      value: 
-      objectReference: {fileID: 161906699}
-    - target: {fileID: 944764381217515218, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
       propertyPath: PowerUpSoundClip
       value: 
       objectReference: {fileID: 8300000, guid: 63207422ff6f7a543bcf9a5e8dcba904, type: 3}
     - target: {fileID: 4245591710575686607, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
       propertyPath: m_Name
       value: PowerUp Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 4422492722745114460, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5107719c89d1ac347b59d2f595a9ef19, type: 3}
-    - target: {fileID: 4422492722745114460, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4422492722745114460, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4422492722745114460, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055098760711745545, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
-      propertyPath: m_Radius
-      value: 1.17
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6200714771912946187, guid: f37266b908f6b7549b214c837cbbd718, type: 3}
@@ -31380,14 +31262,13 @@ GameObject:
   - component: {fileID: 1655927612}
   - component: {fileID: 1655927614}
   - component: {fileID: 1655927613}
-  - component: {fileID: 1655927615}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1655927612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31420,7 +31301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -31445,27 +31326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655927611}
   m_CullTransparentMesh: 1
---- !u!95 &1655927615
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655927611}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a33e068d37ce8434386a925b82f46390, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1659192290
 GameObject:
   m_ObjectHideFlags: 0
@@ -33389,7 +33249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1731231204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33399,14 +33259,14 @@ RectTransform:
   m_GameObject: {fileID: 1731231203}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4012921, y: 0.4012921, z: 0.4012921}
+  m_LocalScale: {x: 0.9838509, y: 0.9838509, z: 0.9838509}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 368495207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -778, y: 401}
+  m_AnchoredPosition: {x: -909, y: 4}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731231205
@@ -33429,7 +33289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e285b99b50d39154e8fed0069b6ee43c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed850bf46da65564f97f67debe9247d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37040,7 +36900,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1793016579
   m_SortingLayer: 3
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 1, b: 0.89161634, a: 1}
   m_FlipX: 0
@@ -38709,18 +38569,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2295857737113604013, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5467646
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295857737113604013, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5467646
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295857737113604013, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5467646
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295857737113604013, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -81.869995
       objectReference: {fileID: 0}
@@ -38760,22 +38608,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4106418047047856267, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 17a9ca3703384e04aafc62b0531053e8, type: 3}
-    - target: {fileID: 4106418047047856267, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106418047047856267, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106418047047856267, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4185868269440608335, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
       propertyPath: Loop
       value: 0
@@ -38797,20 +38629,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1937306704}
     - target: {fileID: 7391871865306291773, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: powerupImage
-      value: 
-      objectReference: {fileID: 1655927611}
-    - target: {fileID: 7391871865306291773, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
       propertyPath: PowerUpSoundClip
       value: 
       objectReference: {fileID: 8300000, guid: a53900c3e6734cf42bd472838dd49976, type: 3}
     - target: {fileID: 8375839692161181092, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
       propertyPath: m_Name
       value: PowerUp Dash
-      objectReference: {fileID: 0}
-    - target: {fileID: 8799622309466726743, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}
-      propertyPath: m_Radius
-      value: 0.92
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4185868269440608335, guid: d47356b36d388dc40b41e7f405d310cb, type: 3}

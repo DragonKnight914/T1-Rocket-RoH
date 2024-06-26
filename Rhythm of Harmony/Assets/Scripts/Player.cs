@@ -57,8 +57,10 @@ public class Player : MonoBehaviour
 
 
     //Powerups
-    [SerializeField] public bool canTripleShot = false;
-    [SerializeField] public bool canSpeedBoost = false;
+    public bool canTripleShot = false;
+    public bool canSpeedBoost = false;
+    public Animator lyreAnim;
+    public Animator defiAnim;
 
     //Objects
     [SerializeField] private GameObject ShurikenPrefab = null;
@@ -268,8 +270,10 @@ public class Player : MonoBehaviour
     {
         //if (isGrounded())
         //{
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+
+        
         //}
         /*else
         {
@@ -279,7 +283,11 @@ public class Player : MonoBehaviour
         }*/
         PlayerSounds.PlayOneShot(JumpClip, 0.25f);
         if (jumpCount == 1)
+        {
+            defiAnim.SetTrigger("DefiTrigger");
             PlayerSounds.PlayOneShot(DefiClip, 0.05f);
+        }
+            
     }
 
     private void JumpFall()
@@ -291,6 +299,7 @@ public class Player : MonoBehaviour
     {
         PlayerSounds.PlayOneShot(DashClip, 0.3f);
         PlayerSounds.PlayOneShot(LyreClip, 0.15f);
+        lyreAnim.SetTrigger("Cooldown");
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         
