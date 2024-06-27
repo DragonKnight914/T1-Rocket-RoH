@@ -1,0 +1,1328 @@
+fileFormatVersion: 2
+guid: 0ea9e69677f04e140a4fd1ddf8f34eaf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animations_Polish_0
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1740
+        width: 213
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d94f95878f959f429f688d3bcbe453b
+      internalID: 222744971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_1
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1966
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026cc988d95e9ad4f9808674fd654c21
+      internalID: 1972795281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1756
+        width: 199
+        height: 466
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5edeaaeaa7b5c40a409a56b8e01ae9
+      internalID: -483462587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_3
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1745
+        width: 281
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2b9884a869aaf449e6eddef592adbd
+      internalID: 538669167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_4
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 1740
+        width: 258
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f8dea3a8ab4e241b44e43eed34c8ea
+      internalID: -1973869692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_5
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 1740
+        width: 267
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b383e7f0f5bbbd4dac7eba8ca3330e5
+      internalID: 496206527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_6
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 1749
+        width: 270
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb552e65123c414aa3ffea97a3d9d41
+      internalID: 478581385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_7
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 1756
+        width: 281
+        height: 466
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9d3ac508bb2474ca7e1a7dbb6546d5
+      internalID: 2051336663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_8
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 1745
+        width: 334
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12bc0b5184d47546b5aa08ea1692779
+      internalID: 1380011543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_9
+      rect:
+        serializedVersion: 2
+        x: 3245
+        y: 1740
+        width: 266
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d43efd2a009f6b4ea0987f512cc4247
+      internalID: -883627706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_10
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 1740
+        width: 270
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c51f7744e8dfcf42ba0eb49ccf9eb44
+      internalID: -2029847505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_11
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 1915
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2a219c78982594caad80ed4a0d61fe
+      internalID: -676705110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_12
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1908
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269f6e101ba062f49abf9df9ab70e157
+      internalID: -1203659244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_13
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 1908
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245554989f51f1e4a8a3865a42deb355
+      internalID: -641237427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_14
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1890
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66d04425ff4e2f43bc229fba11478bd
+      internalID: -1195030509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_15
+      rect:
+        serializedVersion: 2
+        x: 3235
+        y: 1875
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de82ee40bf0e9b441b0102ad4bc8a9fc
+      internalID: -1898774261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_16
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1286
+        width: 261
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c7e4c66b5371642a5bc9dc05e4ac47
+      internalID: -1152242423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_17
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1288
+        width: 248
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f65a8ea6373a8848b00c9e831e5a6ce
+      internalID: 1830171255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_18
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 1288
+        width: 251
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0898932d5c8dbf4bbe71c6ab625056e
+      internalID: 1634610467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_19
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 1288
+        width: 252
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492cd52aa4489164099f66384cbf6444
+      internalID: -1925020566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_20
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1288
+        width: 252
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6863b4ff1a73be342ac7ed8e3d8b7dfd
+      internalID: -1080788258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_21
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1288
+        width: 251
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6aab3b2a764064a8fe77a6ddf0be8e
+      internalID: 639123326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_22
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 1308
+        width: 457
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494bf4ef93eb83142ad1e3afcfda8455
+      internalID: 1180763907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_23
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 1329
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40fc325de53d35488dcd65470ec2a02
+      internalID: 372628854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_24
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 1289
+        width: 467
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a0b98ca5af25e429e11fe13afa435a
+      internalID: 136835660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_25
+      rect:
+        serializedVersion: 2
+        x: 3315
+        y: 1314
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5e8d52277960644a9a794c1ba1e132
+      internalID: -740066002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_26
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 659
+        width: 184
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03e626ec091fea42a51bb5b6a963c6a
+      internalID: 1807734209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_27
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 659
+        width: 187
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39ec42a0b328bd4c930c5bc09a1368a
+      internalID: -1657315702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_28
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 659
+        width: 183
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2feee2a46d4264f9441923350fffbc
+      internalID: -829665385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_29
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 659
+        width: 180
+        height: 479
+      alignment: 9
+      pivot: {x: 0.51666665, y: 0.49895617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426f651de383fe8478e3e3388e454b59
+      internalID: -1739050679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_30
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 634
+        width: 190
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bea2dd035598ae44a81c58b5e80db5d
+      internalID: -406831444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_31
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 628
+        width: 222
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a013c6f6c0e698740a6a7bd0788910ff
+      internalID: 307822617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_32
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 628
+        width: 265
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7160431a3adeb4c87916afd79d8284
+      internalID: -775142512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_33
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 628
+        width: 288
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3cf21dc50e7b648bed4d0b2882b1e8
+      internalID: 1682290765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_34
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 628
+        width: 270
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59131a126d822f43b424f3d38c61547
+      internalID: -1082841160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_35
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 628
+        width: 258
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709ceed4893e9384784fd8bbcbc65478
+      internalID: -603348132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_36
+      rect:
+        serializedVersion: 2
+        x: 3445
+        y: 1012
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06bee63735551440a168169c885ec18
+      internalID: -1008807995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_37
+      rect:
+        serializedVersion: 2
+        x: 3550
+        y: 628
+        width: 269
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb200ec9dad90e24b823b4192a99ad7e
+      internalID: 358552843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_38
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 988
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba6c70833c83834c805dd75fdd2bc39
+      internalID: -2133168218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_39
+      rect:
+        serializedVersion: 2
+        x: 3824
+        y: 987
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cbcc0fa70c6044a8ebaeb9a48b1308
+      internalID: -1716279366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_40
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 59
+        width: 328
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c924a9b0364e4d449b235d4a38f369ae
+      internalID: -300173135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_41
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 347
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d737590aeb9a814458c6ae5764f96ed8
+      internalID: 2132381536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_42
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 122
+        width: 257
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020c1a1f1e35ee34ba28cfb40c3086d5
+      internalID: 610732526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_43
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 159
+        width: 259
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d979bbb6a05c884abbced20e205ae65
+      internalID: -974396297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_44
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 159
+        width: 252
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f71a2511066b24486e1a67e448e1a0
+      internalID: 416137594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_45
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 27
+        width: 286
+        height: 511
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da1c589fb890d14fbc1056c4d5c362e
+      internalID: 1120658296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_46
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 37
+        width: 287
+        height: 501
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f272986bb24361d4d9ef3b832197307e
+      internalID: -1118686557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_47
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 95
+        width: 315
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ed151077535134d9e6edf482b986a6
+      internalID: -645906657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_48
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 132
+        width: 258
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f52e39e1c052314a93d45080431984f
+      internalID: 1735183931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_49
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 132
+        width: 251
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9c5f2f9a0f0bb4a8d5de55b8c972db
+      internalID: 942167465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_50
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 265
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17019b9b4dab9ad47bcc0444bb515609
+      internalID: 303061441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_51
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 188
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021fb5b1fc1863f418f881ef5ee7d709
+      internalID: 1228359135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_52
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 182
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd590ed0f863ca4aa5a5ebe77e33273
+      internalID: -167121802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animations_Polish_53
+      rect:
+        serializedVersion: 2
+        x: 3369
+        y: 155
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7682e45c75c38f4d8711d7b40154a5c
+      internalID: 1842474845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Animations_Polish_0: 222744971
+      Animations_Polish_1: 1972795281
+      Animations_Polish_10: -2029847505
+      Animations_Polish_11: -676705110
+      Animations_Polish_12: -1203659244
+      Animations_Polish_13: -641237427
+      Animations_Polish_14: -1195030509
+      Animations_Polish_15: -1898774261
+      Animations_Polish_16: -1152242423
+      Animations_Polish_17: 1830171255
+      Animations_Polish_18: 1634610467
+      Animations_Polish_19: -1925020566
+      Animations_Polish_2: -483462587
+      Animations_Polish_20: -1080788258
+      Animations_Polish_21: 639123326
+      Animations_Polish_22: 1180763907
+      Animations_Polish_23: 372628854
+      Animations_Polish_24: 136835660
+      Animations_Polish_25: -740066002
+      Animations_Polish_26: 1807734209
+      Animations_Polish_27: -1657315702
+      Animations_Polish_28: -829665385
+      Animations_Polish_29: -1739050679
+      Animations_Polish_3: 538669167
+      Animations_Polish_30: -406831444
+      Animations_Polish_31: 307822617
+      Animations_Polish_32: -775142512
+      Animations_Polish_33: 1682290765
+      Animations_Polish_34: -1082841160
+      Animations_Polish_35: -603348132
+      Animations_Polish_36: -1008807995
+      Animations_Polish_37: 358552843
+      Animations_Polish_38: -2133168218
+      Animations_Polish_39: -1716279366
+      Animations_Polish_4: -1973869692
+      Animations_Polish_40: -300173135
+      Animations_Polish_41: 2132381536
+      Animations_Polish_42: 610732526
+      Animations_Polish_43: -974396297
+      Animations_Polish_44: 416137594
+      Animations_Polish_45: 1120658296
+      Animations_Polish_46: -1118686557
+      Animations_Polish_47: -645906657
+      Animations_Polish_48: 1735183931
+      Animations_Polish_49: 942167465
+      Animations_Polish_5: 496206527
+      Animations_Polish_50: 303061441
+      Animations_Polish_51: 1228359135
+      Animations_Polish_52: -167121802
+      Animations_Polish_53: 1842474845
+      Animations_Polish_6: 478581385
+      Animations_Polish_7: 2051336663
+      Animations_Polish_8: 1380011543
+      Animations_Polish_9: -883627706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

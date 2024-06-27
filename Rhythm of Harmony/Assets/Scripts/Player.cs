@@ -342,7 +342,7 @@ public class Player : MonoBehaviour
     public bool isGrounded()
     {
           
-        if (Physics2D.BoxCast(transform.position, boxSize, 0f, Vector2.down, castDistance, groundMask))
+        if (Physics2D.BoxCast(transform.position - transform.up * castDistance, boxSize, 0f, Vector2.down, 0f, groundMask))
         {
             //Debug.Log("Grounded");
             return true;
