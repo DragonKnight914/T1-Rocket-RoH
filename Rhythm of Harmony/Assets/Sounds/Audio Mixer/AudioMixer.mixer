@@ -149,19 +149,19 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: f23b9ad8ef538054fbfb7a22797398b7
-    name: Ambience
+    name: ambience
   - guid: 69f1634de196a0642bfc463a01778c4d
-    name: Aulos
+    name: aulos
   - guid: dfa1860e35f30f04f801cc04eeb23b67
-    name: Defi
+    name: defi
   - guid: 1741678dd14b5e248ba1dc2857dd29fb
-    name: Lyre
+    name: lyre
   - guid: 0a5e4ae0f150295409c02e28c46a6ca5
-    name: Master
+    name: master
   - guid: 68cbdb1c804294f448bd50b3255bd473
-    name: Music
+    name: music
   - guid: 75fefba2431edaf48a3dfe4ac7c1ece4
-    name: SFX
+    name: sfx
   m_AudioMixerGroupViews:
   - guids:
     - 093a14ee7f4b01a44b8f7ca98d678ffa

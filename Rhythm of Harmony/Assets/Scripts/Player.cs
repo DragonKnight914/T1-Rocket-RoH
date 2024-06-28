@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [Header("Default Parameters")]
     
     private Player p;
-    private Animator Anim = null;
+    private Animator anim;
     public float speed = 5.0f;
     public float airSpeed = 1.0f;
     public float maxFallSpeed;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     public float dashTime = 0.5f;
     public float dashCooldown = 0.5f;
     private Vector2 dashDirection;
-    private bool isDashing = false;
+    public bool isDashing = false;
     private bool canDash = true;
     private int dashCount = 1;
     public bool aulosAbility;
@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
         
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
 
+        anim = GetComponent<Animator>();
+
         CameraFollowObject = CameraFollowGO.gameObject.GetComponent<CameraFollowObjects>();
 
         fallSpeedYDampChangeThresh = CameraManager.instance.fallSpeedYDampChangeThresh;
@@ -127,7 +129,10 @@ public class Player : MonoBehaviour
         //Resets Dash
         if (isGrounded())
             canDash = true;    
-
+        if (Input.GetKeyDown("f"))
+        {
+            StartCoroutine(PlayAulos());
+        }
 
         //Resets Jump 
         if (isGrounded() && rb.velocity.y <= 0f)
@@ -369,14 +374,13 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    /*public IEnumerator TripleShotPowerDown()
+    public IEnumerator PlayAulos()
     {
-        yield return new WaitForSeconds(5.0f);
-        //wait while program runs for 5 seconds            
-        canTripleShot = false; //turn off triple shot
+        yield return new WaitForSeconds(0.4f);            
+        PlayerSounds.PlayOneShot(AulosClip, 0.3f);
     }
 
-    public void TripleShotPowerUp()
+    /*public void TripleShotPowerUp()
     {
         canTripleShot = true;
         

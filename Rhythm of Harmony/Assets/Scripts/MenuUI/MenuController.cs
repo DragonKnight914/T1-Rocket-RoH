@@ -67,12 +67,12 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        customizingHash = Animator.StringToHash("isCustomizing");
+        //customizingHash = Animator.StringToHash("isCustomizing");
 
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
+        //resolutions = Screen.resolutions;
+        //resolutionDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
+        /*List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
 
@@ -87,7 +87,7 @@ public class MenuController : MonoBehaviour
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.RefreshShownValue();*/
       
         if (PlayerPrefs.HasKey("masterVolume"))
         {
@@ -114,7 +114,7 @@ public class MenuController : MonoBehaviour
             SetAmbienceVolume();
         }
         
-        if (PlayerPrefs.HasKey("masterSenY"))
+        /*if (PlayerPrefs.HasKey("masterSenY"))
         {
             sensYSlider.value = PlayerPrefs.GetFloat("masterSenY");
             sensYTextValue.text = sensYSlider.value.ToString("0.0");
@@ -125,12 +125,12 @@ public class MenuController : MonoBehaviour
             sensXSlider.value = PlayerPrefs.GetFloat("masterSenX");
             sensXTextValue.text = sensXSlider.value.ToString("0.0");
             SetXSensitivity();
-        }
+        }*/
 
         else
         {
-            SetYSensitivity();
-            SetXSensitivity();
+            //SetYSensitivity();
+            //SetXSensitivity();
             SetMasterVolume();
             SetMusicVolume();
             SetSFXVolume();
