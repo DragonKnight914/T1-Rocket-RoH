@@ -547,7 +547,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 260335316}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1855,7 +1855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2715269704984601698, guid: 1463c71cbea1b1d43aaa50b9ca354871, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2747019464423327651, guid: 1463c71cbea1b1d43aaa50b9ca354871, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -41,18 +41,18 @@ public class Powerup : MonoBehaviour
                 if (powerupID == 0) //if script is found
                 {
                     P.maxJumps = 2; //enables ability
-                    music.SetFloat("Defi", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    music.SetFloat("defi", Mathf.Lerp(-80f, 0, Time.deltaTime));
                     
                 } 
                 else if (powerupID == 1)
                 {
                     P.lyreAbility = true;
-                    music.SetFloat("Lyre", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    music.SetFloat("lyre", Mathf.Lerp(-80f, 0, Time.deltaTime));
                 }
                 else if (powerupID == 2)
                 {
                     P.aulosAbility = true;
-                    music.SetFloat("Aulos", Mathf.Lerp(-80f, 0, Time.deltaTime));
+                    music.SetFloat("aulos", Mathf.Lerp(-80f, 0, Time.deltaTime));
                 }
                 SoundEffects.PlayOneShot(PowerUpSoundClip, 0.1f);
                 SoundEffects.PlayOneShot(MusicClip, 0.1f);
