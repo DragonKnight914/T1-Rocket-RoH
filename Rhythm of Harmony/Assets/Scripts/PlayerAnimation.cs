@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace FSR
+{
+
 public class PlayerAnimation : MonoBehaviour
 {
 
@@ -24,9 +27,10 @@ public class PlayerAnimation : MonoBehaviour
     const string PLAYER_JUMP = "JumpAnim";
     const string PLAYER_AULOS = "AulosAnim";
 
+    //[SerializeField] private FSR_Player fSR_Player;
+
     //Animation Durration
     private float aulosTime;
-
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +85,7 @@ public class PlayerAnimation : MonoBehaviour
             if (xAxis != 0)
             {
                 ChangeAnimationState(PLAYER_WALK);
+                //fSR_Player.step();
             }
             else
             {
@@ -126,5 +131,5 @@ public class PlayerAnimation : MonoBehaviour
     {
         isAulosPlaying = false;
     }
-
+}
 }

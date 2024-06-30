@@ -6,11 +6,11 @@ namespace FSR
     [RequireComponent(typeof(AudioSource))]
     public class FSR_Player : MonoBehaviour
     {
-        private AudioSource m_AudioSource;
+        public AudioSource m_AudioSource;
         public Transform foot;
-        public float raycastSize = 10;
+        public int raycastSize = 10;
         [SerializeField] private FSR_Data data;
-
+        public PlayerAnimation walkAnimation;
 
         public void Start()
         {
@@ -19,17 +19,18 @@ namespace FSR
             {
                 Debug.Log("unassigned foot ");
             }
+            step();
         }
 
 
         public void step()
         {
-            RaycastHit hit;
-            if (Physics.Raycast(foot.position, -foot.up, out hit, raycastSize))
+            RaycastHit2D hit = (Physics2D.Raycast(foot.position, -foot.up, raycastSize));
+            if (hit.collider != null)
             {
                 try {
 
-                   FSR_SimpleSurface surface =  hit.transform.GetComponent<FSR_SimpleSurface>();
+                   FSR_SimpleSurface surface =  hit.rigidbody.GetComponent<FSR_SimpleSurface>();
                     foreach (FSR_Data.SurfaceType surfaceData in data.surfaces)
                     {
                         if (surfaceData.name.Equals(surface.GetSurface()))
@@ -99,8 +100,6 @@ namespace FSR
             soundEffects[n] = soundEffects[0];
             soundEffects[0] = m_AudioSource.clip;
         }
-
-
 
     }
 }

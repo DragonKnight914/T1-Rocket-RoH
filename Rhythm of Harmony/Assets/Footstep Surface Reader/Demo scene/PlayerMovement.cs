@@ -53,7 +53,7 @@ namespace FSR
             if (stepTimer > stepfrequency && _rigidbody.velocity.magnitude > 0.1f)
             {
                 stepTimer = 0;
-                fSR_Player.step();
+                //fSR_Player.step();
             }
 
             Cursor.lockState = CursorLockMode.Locked;
