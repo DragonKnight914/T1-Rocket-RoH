@@ -16700,7 +16700,7 @@ GameObject:
   - component: {fileID: 665134935}
   - component: {fileID: 665134938}
   - component: {fileID: 665134939}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Platform
   m_TagString: GRASS
   m_Icon: {fileID: 0}
