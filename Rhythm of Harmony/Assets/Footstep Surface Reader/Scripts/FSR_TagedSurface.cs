@@ -15,8 +15,8 @@ namespace FSR
         public String GetSurface()
         {
 
-                    try
-                    {
+                    //try
+                    //{
                         String[] surfaceName = transform.gameObject.GetComponent<Collider>().GetComponent<Renderer>().material.mainTexture.name.Split('_');
 
                          bool mismatch = true;
@@ -40,15 +40,15 @@ namespace FSR
                             throw new UnityException("looks like you have mismatching surfaces names, make sure all the surfaces components have the same name specified in the FSR data");
                         }
 
-                    }
-                    catch (MissingComponentException)
+                    //}
+                    /*catch (MissingComponentException)
                     {
                         return "GENERIC";
                     }
                     catch (NullReferenceException)
                     {
                         return "GENERIC";
-                    }
+                    }*/
                 
             
 

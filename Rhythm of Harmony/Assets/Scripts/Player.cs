@@ -128,8 +128,8 @@ public class Player : MonoBehaviour
 
         //Resets Dash
         if (isGrounded())
-            canDash = true;    
-        if (Input.GetKeyDown("f") && aulosAbility)
+            canDash = true;
+        if (aulosAbility && Input.GetKeyDown("f"))
         {
             StartCoroutine(PlayAulos());
         }

@@ -12,7 +12,7 @@ public class PowerPlatforms : MonoBehaviour
     void Start()
     {
         bc2d = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame

@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FallingAnim
+  m_Name: LandingAnim
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -89,7 +89,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -826768745817942183}
-    m_Position: {x: 280, y: 140, z: 0}
+    m_Position: {x: 260, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5448065100035884610}
     m_Position: {x: 280, y: 190, z: 0}
@@ -104,10 +104,10 @@ AnimatorStateMachine:
     m_Position: {x: 385, y: 385, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7698472293045070067}
-    m_Position: {x: 420, y: 450, z: 0}
+    m_Position: {x: 420, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4627304269182627725}
-    m_Position: {x: 455, y: 515, z: 0}
+    m_Position: {x: 450, y: 500, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -225,7 +225,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FallingAnim 0
+  m_Name: FallingAnim
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
