@@ -26,15 +26,21 @@ namespace FSR
         public void step()
         {
             RaycastHit2D hit = (Physics2D.Raycast(foot.position, -foot.up, raycastSize));
+            Debug.DrawRay(foot.position, -foot.up * raycastSize, Color.red, 1.0f);
+
             if (hit.collider != null)
-            {
+            { 
+                Debug.Log("Hit!");
+                Debug.Log(hit.collider.gameObject.name);
+                Debug.Log(hit.collider.gameObject.tag);
                 try {
 
-                   FSR_SimpleSurface surface =  hit.rigidbody.GetComponent<FSR_SimpleSurface>();
+                   FSR_SimpleSurface surface =  hit.collider.gameObject.GetComponent<FSR_SimpleSurface>();
                     foreach (FSR_Data.SurfaceType surfaceData in data.surfaces)
                     {
                         if (surfaceData.name.Equals(surface.GetSurface()))
                         {
+                            Debug.Log(surfaceData.name);
                             playSound(surfaceData);
                         }
                     }
@@ -48,6 +54,7 @@ namespace FSR
                         {
                             if (surfaceData.name.Equals(surface.GetSurface()))
                             {
+                                Debug.Log(surfaceData.name);
                                 playSound(surfaceData);
                             }
                         }
@@ -72,6 +79,7 @@ namespace FSR
                             {
                                 if (surfaceData.name.Equals("GENERIC"))
                                 {
+                                    Debug.Log("no surface detected");
                                     playSound(surfaceData);
                                 }
                             }
