@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.Video;
 
 
-public class CutsceneScript : MonoBehaviour
+public class EndFade : MonoBehaviour
 {
-
-    private VideoPlayer m_VideoPlayer;
-    public GameObject Canvas;
-    public AudioSource music;
+    public VideoPlayer m_VideoPlayer;
+    public GameObject vidHolder;
+    public GameObject Thanks;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_VideoPlayer = GetComponent<VideoPlayer>();
+        //m_VideoPlayer = GetComponent<VideoPlayer>();
     }
 
     // Update is called once per frame
@@ -24,9 +23,8 @@ public class CutsceneScript : MonoBehaviour
         {
             //Video has finshed playing!
             Debug.Log("Finished");
-            Canvas.SetActive(true);
-            music.Play();
-            this.gameObject.SetActive(false);
+            Thanks.SetActive(true);
+            //vidHolder.SetActive(false);
         }
     }
 }
