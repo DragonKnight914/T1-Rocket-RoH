@@ -8,6 +8,10 @@ public class PowerPlatforms : MonoBehaviour
     private BoxCollider2D bc2d;
     private Animator anim;
 
+    //sfx
+    [SerializeField] private AudioClip[] NoteClip = null;
+    [SerializeField] private AudioSource Sounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class PowerPlatforms : MonoBehaviour
         if (isActive && !bc2d.enabled)
         {
             bc2d.enabled = true;
+            int soundPlayed = Random.Range(0, 5);
+            Sounds.PlayOneShot(NoteClip[soundPlayed], 0.5f);
             anim.SetTrigger("Activate");
         }
         else if (!isActive && bc2d.enabled)
@@ -30,7 +36,7 @@ public class PowerPlatforms : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
@@ -44,5 +50,5 @@ public class PowerPlatforms : MonoBehaviour
             Destroy(this.gameObject); //powerup
         }
  
-    }
+    }*/
 }

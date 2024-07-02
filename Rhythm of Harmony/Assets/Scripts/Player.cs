@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     private bool canDash = true;
     private int dashCount = 1;
     public bool aulosAbility;
+    public bool inDialog;
 
     //ShurikenFire Direction
     //public Transform shurikenPoint;
@@ -78,6 +79,9 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip DashClip = null;
     [SerializeField] private AudioClip JumpClip = null;
     [SerializeField] private AudioSource PlayerSounds;
+
+    //score
+    public float score;
 
     [Header("VCamReferences")]
     [SerializeField] private GameObject CameraFollowGO;
@@ -119,87 +123,95 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        //Move();
-
-        //Bounds();
-
-        //Shoot();
-
-        //Resets Dash
-        if (isGrounded())
-            canDash = true;
-        if (aulosAbility && Input.GetKeyDown("f"))
+        if (!inDialog)
         {
-            StartCoroutine(PlayAulos());
-        }
 
-        //Resets Jump 
-        if (isGrounded() && rb.velocity.y <= 0f)
-        {
-            jumpCount = 0;
-            canDoubleJump = false;
-            
-        }
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            //Move();
 
-        if (!isGrounded() && canDoubleJump == false)
-        {
-            jumpCount++;
-            canDoubleJump = true;
-            
-        }
+            //Bounds();
 
+            //Shoot();
 
-        //Checks if can jump
-        if (Input.GetKeyDown(jumpKey))
-        {
-            if (isGrounded() && jumpCount == 0)
+            //Resets Dash
+            if (isGrounded())
+                canDash = true;
+            if (aulosAbility && Input.GetKeyDown("f"))
             {
+                StartCoroutine(PlayAulos());
+            }
+
+            //Resets Jump 
+            if (isGrounded() && rb.velocity.y <= 0f)
+            {
+                jumpCount = 0;
+                canDoubleJump = false;
+                
+            }
+
+            if (!isGrounded() && canDoubleJump == false)
+            {
+                jumpCount++;
                 canDoubleJump = true;
-                Jump();
-                jumpCount++;
-
+                
             }
 
-            else if (!isGrounded() && jumpCount < maxJumps)
+
+            //Checks if can jump
+            if (Input.GetKeyDown(jumpKey))
             {
-                Jump();
-                jumpCount++;
+                if (isGrounded() && jumpCount == 0)
+                {
+                    canDoubleJump = true;
+                    Jump();
+                    jumpCount++;
+
+                }
+
+                else if (!isGrounded() && jumpCount < maxJumps)
+                {
+                    Jump();
+                    jumpCount++;
+                }
+            }
+            if (!Input.GetKey(jumpKey) && !isGrounded())
+            {
+                //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
+                JumpFall();
+            }
+
+            if (Input.GetKeyDown(dashKey) && canDash && lyreAbility && dashCount >= 1)
+            {
+                //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
+                isDashing = true;
+                canDash = false;
+                dashCount--;
+                if (faceRight)
+                    dashDirection = Vector3.right;
+                else
+                    dashDirection = Vector3.left;
+                StartCoroutine(Dashing());
+            }
+
+            //if we are falling past the speed threshold
+            if (rb.velocity.y < fallSpeedYDampChangeThresh && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.lerpedFromPlayerFalling)
+            {
+                CameraManager.instance.LerpYDamping(true);
+            }
+
+            //if we're standing still or moving up
+            if (rb.velocity.y == 0f && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.lerpedFromPlayerFalling)
+            {
+                CameraManager.instance.lerpedFromPlayerFalling = false;
+
+                CameraManager.instance.LerpYDamping(false);
             }
         }
-        if (!Input.GetKey(jumpKey) && !isGrounded())
+
+        else
         {
-            //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
-            JumpFall();
+            rb.velocity = new Vector2(0,rb.velocity.y);
         }
-
-        if (Input.GetKeyDown(dashKey) && canDash && lyreAbility && dashCount >= 1)
-        {
-            //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
-            isDashing = true;
-            canDash = false;
-            dashCount--;
-            if (faceRight)
-                dashDirection = Vector3.right;
-            else
-                dashDirection = Vector3.left;
-            StartCoroutine(Dashing());
-        }
-
-        //if we are falling past the speed threshold
-        if (rb.velocity.y < fallSpeedYDampChangeThresh && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.lerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpYDamping(true);
-        }
-
-        //if we're standing still or moving up
-        if (rb.velocity.y == 0f && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.lerpedFromPlayerFalling)
-        {
-            CameraManager.instance.lerpedFromPlayerFalling = false;
-
-            CameraManager.instance.LerpYDamping(false);
-        }
-
 
     }
 
@@ -210,20 +222,23 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        //clamp players Y fall speed 
-        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -maxFallSpeed, maxFallSpeed * 5));
-
-        Move();
-
-        SpeedController();
-
-        isGrounded();
-
-
-        if (isDashing)
+        if (!inDialog)
         {
-            rb.velocity = dashDirection.normalized * dashVelocity;
-            return;
+            //clamp players Y fall speed 
+            rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -maxFallSpeed, maxFallSpeed * 5));
+
+            Move();
+
+            SpeedController();
+
+            isGrounded();
+
+
+            if (isDashing)
+            {
+                rb.velocity = dashDirection.normalized * dashVelocity;
+                return;
+            }
         }
         
     }
@@ -378,6 +393,11 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);            
         PlayerSounds.PlayOneShot(AulosClip, 0.3f);
+    }
+
+    public void ExitDialog()
+    {
+        inDialog = false;
     }
 
     /*public void TripleShotPowerUp()

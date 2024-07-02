@@ -64,90 +64,97 @@ namespace FSR
         // Update is called once per frame
         void Update()
         {
-
-            //Checking directional inputs
-            xAxis = Input.GetAxisRaw("Horizontal");
-
-            //Checking Jump input
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!P.inDialog)
             {
-                isJumpPressed = true;
-            }
+                //Checking directional inputs
+                xAxis = Input.GetAxisRaw("Horizontal");
 
-            //Checking Aulos
-            if (P.aulosAbility && Input.GetKeyDown("f"))
-            {
-                    isAulosPressed = true;
-            }
+                //Checking Jump input
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    isJumpPressed = true;
+                }
 
+                //Checking Aulos
+                if (P.aulosAbility && Input.GetKeyDown("f"))
+                {
+                        isAulosPressed = true;
+                }
+            }
+            else
+                xAxis = 0;
         }
 
         private void FixedUpdate()
         {
-            if (P.isGrounded() && !P.isDashing && !isAulosPlaying && rb2d.velocity.y == 0f && !canLand)
+            if (P.inDialog)
+                ChangeAnimationState(PLAYER_IDLE);
+            else
             {
-                
-                if (xAxis != 0)
+                if (P.isGrounded() && !P.isDashing && !isAulosPlaying && rb2d.velocity.y == 0f && !canLand)
                 {
-                    ChangeAnimationState(PLAYER_WALK);
-                    //fSR_Player.step();
+                    
+                    if (xAxis != 0)
+                    {
+                        ChangeAnimationState(PLAYER_WALK);
+                        //fSR_Player.step();
+                    }
+                    else
+                    {
+                        ChangeAnimationState(PLAYER_IDLE);
+                    }
                 }
-                else
+
+                if (P.isDashing)
                 {
-                    ChangeAnimationState(PLAYER_IDLE);
+                    ChangeAnimationState(PLAYER_DASH);
                 }
-            }
 
-            if (P.isDashing)
-            {
-                ChangeAnimationState(PLAYER_DASH);
-            }
-
-            //-------------------------------------
-            //Check player trying to jump
-            if (isJumpPressed && !P.isDashing && !isAulosPlaying && rb2d.velocity.y >= 0f) 
-            {
-                isJumpPressed = false;
-                ChangeAnimationState(PLAYER_JUMP);
-            }
-
-            /*if (!P.isGrounded() && !P.isDashing)
-            {
-                ChangeAnimationState(PLAYER_JUMP);
-            }*/
-            //Check player trying to attack
-            if ((isAulosPressed && P.isGrounded()) && !P.isDashing)
-            {
-                isAulosPressed = false;
-                if (!isAulosPlaying)
+                //-------------------------------------
+                //Check player trying to jump
+                if (isJumpPressed && !P.isDashing && !isAulosPlaying && rb2d.velocity.y >= 0f) 
                 {
-
-                    isAulosPlaying = true;
-                    ChangeAnimationState(PLAYER_AULOS);
-                    aulosTime = Anim.GetCurrentAnimatorStateInfo(0).length;
-                    Invoke("AulosComplete", aulosTime); 
-
+                    isJumpPressed = false;
+                    ChangeAnimationState(PLAYER_JUMP);
                 }
-            }
 
-            if (rb2d.velocity.y < 0f && !P.isDashing)
-            {
-                ChangeAnimationState(PLAYER_FALL);
-                canLand = true;   
-            }
-
-            if (canLand && rb2d.velocity.y == 0f && !P.isDashing)
-            {
-                bool isLanding = false;
-                if (!isLanding)
+                /*if (!P.isGrounded() && !P.isDashing)
                 {
-                    isLanding = true;
-                    ChangeAnimationState(PLAYER_LAND);
-                    landingTime = Anim.GetCurrentAnimatorStateInfo(0).length;
-                    Invoke("LandingComplete", landingTime); 
+                    ChangeAnimationState(PLAYER_JUMP);
+                }*/
+                //Check player trying to attack
+                if ((isAulosPressed && P.isGrounded()) && !P.isDashing)
+                {
+                    isAulosPressed = false;
+                    if (!isAulosPlaying)
+                    {
+
+                        isAulosPlaying = true;
+                        ChangeAnimationState(PLAYER_AULOS);
+                        aulosTime = Anim.GetCurrentAnimatorStateInfo(0).length;
+                        Invoke("AulosComplete", aulosTime); 
+
+                    }
+                }
+
+                if (rb2d.velocity.y < 0f && !P.isDashing)
+                {
+                    ChangeAnimationState(PLAYER_FALL);
+                    canLand = true;   
+                }
+
+                if (canLand && rb2d.velocity.y == 0f && !P.isDashing)
+                {
+                    bool isLanding = false;
+                    if (!isLanding)
+                    {
+                        isLanding = true;
+                        ChangeAnimationState(PLAYER_LAND);
+                        landingTime = Anim.GetCurrentAnimatorStateInfo(0).length;
+                        Invoke("LandingComplete", landingTime); 
+                    }
                 }
             }
-
         }
 
         void AulosComplete()
