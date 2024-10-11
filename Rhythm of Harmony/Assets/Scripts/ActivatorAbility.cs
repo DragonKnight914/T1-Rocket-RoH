@@ -6,6 +6,7 @@ public class ActivatorAbility : MonoBehaviour
 {
     [SerializeField] private PowerPlatforms[] PPlatforms;
     [SerializeField] private GameObject barrier;
+    [SerializeField] private float actTime = 2.916f;
     private int i = 0;
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,7 @@ public class ActivatorAbility : MonoBehaviour
             //
             PPlatforms[j].isActive = true;
             Debug.Log("activated");
-            yield return new WaitForSeconds(2.916f);
+            yield return new WaitForSeconds(actTime);
             StartCoroutine(platformRhythmDeactivation());
         }
         
@@ -65,7 +66,7 @@ public class ActivatorAbility : MonoBehaviour
   
         for (int j = 0; j < PPlatforms.Length; j++)
         {
-            yield return new WaitForSeconds(2.916f);
+            yield return new WaitForSeconds(actTime);
             //StartCoroutine(platformRhythmActivation());
             PPlatforms[j].isActive = false;
             Debug.Log("deactivated");

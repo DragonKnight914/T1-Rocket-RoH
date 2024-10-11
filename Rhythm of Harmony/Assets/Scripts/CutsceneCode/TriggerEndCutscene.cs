@@ -9,11 +9,14 @@ public class TriggerEndCutscene : MonoBehaviour
     public VideoPlayer m_VideoPlayer;
     public GameObject vidHolder;
     public GameObject Canvas;
+    public GameObject VidCanvas;
     public GameObject Map;
     public GameObject Player;
     public GameObject fadeOut;
     public AudioSource music;
+    public GameObject otherTracks;
     public GameObject Thanks;
+    public bool canPlayVid;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class TriggerEndCutscene : MonoBehaviour
         if (collision.tag == "Player")
         {
             music.Stop();
+            otherTracks.SetActive(false);
             fadeOut.SetActive(true);
             StartCoroutine(StartCutscene());
         }
@@ -46,10 +50,13 @@ public class TriggerEndCutscene : MonoBehaviour
     private IEnumerator StartCutscene()
     {
         yield return new WaitForSeconds(4.7f);
+        VidCanvas.SetActive(true);
+        canPlayVid = true;
         Map.SetActive(false);
         Player.SetActive(false);
         Canvas.SetActive(false);
-        m_VideoPlayer.Play();
+        
+        
 
     }
 }

@@ -20,7 +20,7 @@ public class CutsceneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((m_VideoPlayer.frame) > 0 && (m_VideoPlayer.isPlaying == false))
+        if ((m_VideoPlayer.frame) > 0 && (m_VideoPlayer.isPlaying == false) || Input.anyKey)
         {
             //Video has finshed playing!
             Debug.Log("Finished");

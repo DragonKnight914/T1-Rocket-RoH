@@ -88,6 +88,10 @@ public class Player : MonoBehaviour
     private CameraFollowObjects CameraFollowObject;
     private float fallSpeedYDampChangeThresh;
 
+    //Puase
+    public bool isPaused = false;
+    public GameObject PauseMenu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -123,7 +127,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!inDialog)
+
+        //Pause Button
+        if (Input.GetKeyDown(KeyCode.P) && isPaused == false)
+        {
+                Time.timeScale = 0;
+                isPaused = true;
+                PauseMenu.SetActive(true);
+        }
+
+        if (!inDialog  && isPaused == false)
         {
 
             horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -241,6 +254,12 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
     }
 
     void Move()
