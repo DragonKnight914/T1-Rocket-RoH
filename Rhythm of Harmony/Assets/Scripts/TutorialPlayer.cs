@@ -17,9 +17,21 @@ public class TutorialPlayer : MonoBehaviour
 
     [Header("Inputs")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode dashKey = KeyCode.LeftShift;
 
-
+    [Header("Power Ups")]
+    public bool canDoubleJump;
     public int jumpCount;
+    public int maxJumps;
+    public bool lyreAbility;
+    public float dashVelocity = 14f;
+    public float dashTime = 0.5f;
+    public float dashCooldown = 0.5f;
+    private Vector2 dashDirection;
+    public bool isDashing = false;
+    private bool canDash = true;
+    private int dashCount = 1;
+
 
     [Header("GroundCheck")]
     public Vector2 boxSize;
@@ -41,11 +53,21 @@ public class TutorialPlayer : MonoBehaviour
         //Checks if can jump
         if (Input.GetKeyDown(jumpKey))
         {
-            if (isGrounded() && jumpCount == 0)
+            if (Input.GetKeyDown(jumpKey))
             {
-                Jump();
-                jumpCount++;
+                if (isGrounded() && jumpCount == 0)
+                {
+                    canDoubleJump = true;
+                    Jump();
+                    jumpCount++;
 
+                }
+
+                else if (!isGrounded() && jumpCount < maxJumps)
+                {
+                    Jump();
+                    jumpCount++;
+                }
             }
 
         }
@@ -61,6 +83,24 @@ public class TutorialPlayer : MonoBehaviour
             jumpCount = 0;
             
         }
+
+        //Dash Ability
+        if (Input.GetKeyDown(dashKey) && canDash && lyreAbility && dashCount >= 1)
+        {
+            //rb.AddForce(Vector2.up * jumpAmount * fallAmount, ForceMode2D.Force);
+            isDashing = true;
+            canDash = false;
+            dashCount--;
+            if (faceRight)
+                dashDirection = Vector3.right;
+            else
+                dashDirection = Vector3.left;
+            StartCoroutine(Dashing());
+        }
+
+        //Resets Dash
+        if (isGrounded())
+            canDash = true;
     
     }
 
@@ -69,9 +109,19 @@ public class TutorialPlayer : MonoBehaviour
     // FixedUpdate is called once per in game frame based on the games frame rate
     void FixedUpdate()
     {
+        //clamp players Y fall speed 
+        rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -maxFallSpeed, maxFallSpeed * 5));
+
+
         Move();
 
         isGrounded();
+
+        if (isDashing)
+        {
+            rb.velocity = dashDirection.normalized * dashVelocity;
+            //return;
+        }
     }
 
 
@@ -113,9 +163,6 @@ public class TutorialPlayer : MonoBehaviour
         rb.AddForce(Vector2.up *  -jumpAmount/fallMultiplier, ForceMode2D.Force);
     }
 
-
-
-
     public bool isGrounded()
     {
           
@@ -129,6 +176,22 @@ public class TutorialPlayer : MonoBehaviour
             //Debug.Log("Not Grounded");
             return false;
         }
+    }
+
+    private IEnumerator Dashing()
+    {
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
+        
+        StartCoroutine(StopDashing());
+        
+    }
+
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        dashCount++;
+        
     }
 
     private void OnDrawGizmos()

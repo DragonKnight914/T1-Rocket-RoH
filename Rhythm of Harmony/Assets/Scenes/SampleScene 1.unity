@@ -1940,9 +1940,17 @@ MonoBehaviour:
   rb: {fileID: 110094231}
   jumpAmount: 14
   maxFallSpeed: 40
-  fallMultiplier: 2
+  fallMultiplier: 3.5
   jumpKey: 32
+  dashKey: 304
+  canDoubleJump: 0
   jumpCount: 0
+  maxJumps: 2
+  lyreAbility: 1
+  dashVelocity: 20
+  dashTime: 0.25
+  dashCooldown: 0.5
+  isDashing: 0
   boxSize: {x: 0.84, y: 0.3}
   castDistance: 0.75
   groundMask:
@@ -1974,7 +1982,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &110094232
 BoxCollider2D:
   m_ObjectHideFlags: 0
